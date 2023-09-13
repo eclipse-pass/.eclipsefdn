@@ -25,16 +25,16 @@ orgs.newOrg('eclipse-pass') {
       value: "********",
     },
     orgs.newOrgSecret('MAVEN_GPG_KEY') {
-      value: "********",
+      value: "pass:bots/technology.pass/gpg/secret-subkeys.asc",
     },
     orgs.newOrgSecret('MAVEN_GPG_PASSPHRASE') {
-      value: "********",
+      value: "pass:bots/technology.pass/gpg/passphrase",
     },
     orgs.newOrgSecret('OSSRH_PASSWORD') {
-      value: "********",
+      value: "pass:bots/technology.pass/oss.sonatype.org/password",
     },
     orgs.newOrgSecret('OSSRH_USERNAME') {
-      value: "********",
+      value: "pass:bots/technology.pass/oss.sonatype.org/username",
     },
   ],
   _repositories+:: [
