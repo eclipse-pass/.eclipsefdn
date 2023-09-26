@@ -15,6 +15,11 @@ orgs.newOrg('eclipse-pass') {
       default_workflow_permissions: "write",
     },
   },
+  credentials+: [{
+      "provider": "bitwarden",
+      "item_id" : "23801ca4-fd27-446c-b5af-b07b0108f443"
+    },
+  ],
   secrets+: [
     orgs.newOrgSecret('GH_PAT') {
       value: "********",
