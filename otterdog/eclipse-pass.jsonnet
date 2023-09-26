@@ -21,6 +21,12 @@ orgs.newOrg('eclipse-pass') {
     },
   ],
   secrets+: [
+    orgs.newOrgSecret('HELLO_WORLD_QUEST') {
+      value: "bitwarden:23801ca4-fd27-446c-b5af-b07b0108f443@quest",
+    },
+    orgs.newOrgSecret('HELLO_WORLD_COLOR') {
+      value: "bitwarden:23801ca4-fd27-446c-b5af-b07b0108f443@color",
+    },
     orgs.newOrgSecret('GH_PAT') {
       value: "********",
     },
