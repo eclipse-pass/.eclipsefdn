@@ -115,7 +115,7 @@ orgs.newOrg('eclipse-pass') {
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
-      description: "ModeShape is a distributed, hierarchical, transactional, and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source and written in Java. Clients use the JSR-283 standard Java API for content repositories (aka, JCR) or ModeShape's REST API, and can query content through JDBC and SQL.",
+      description: "ModeShape is a distributed, hierarchical, transactional, and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source and written in Java.",
       has_issues: false,
       has_wiki: false,
       homepage: "http://www.modeshape.org",
