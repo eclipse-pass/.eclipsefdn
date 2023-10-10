@@ -15,17 +15,12 @@ orgs.newOrg('eclipse-pass') {
       default_workflow_permissions: "write",
     },
   },
-  credentials+: [{
-      "provider": "bitwarden",
-      "item_id" : "23801ca4-fd27-446c-b5af-b07b0108f443"
-    },
-  ],
   secrets+: [
     orgs.newOrgSecret('HELLO_WORLD_QUEST') {
-      value: "bitwarden:23801ca4-fd27-446c-b5af-b07b0108f443@quest",
+      value: "pass:bots/technology.pass/helloworld/quest",
     },
     orgs.newOrgSecret('HELLO_WORLD_COLOR') {
-      value: "bitwarden:23801ca4-fd27-446c-b5af-b07b0108f443@color",
+      value: "pass:bots/technology.pass/helloworld/color",
     },
     orgs.newOrgSecret('GH_PAT') {
       value: "********",
