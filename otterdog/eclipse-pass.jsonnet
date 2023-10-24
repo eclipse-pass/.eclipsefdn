@@ -2,7 +2,6 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-pass') {
   settings+: {
-    default_repository_permission: "none",
     dependabot_alerts_enabled_for_new_repositories: false,
     dependabot_security_updates_enabled_for_new_repositories: false,
     dependency_graph_enabled_for_new_repositories: false,
@@ -49,6 +48,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages') {
           branch_policies+: [
@@ -69,6 +72,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('AWS_ACCESS_KEY_ID') {
           value: "********",
@@ -85,19 +92,7 @@ orgs.newOrg('eclipse-pass') {
         orgs.newRepoSecret('EF_TEST_SECRET') {
           value: "********",
         },
-        orgs.newRepoSecret('MAVEN_GPG_KEY') {
-          value: "********",
-        },
-        orgs.newRepoSecret('MAVEN_GPG_PASSPHRASE') {
-          value: "********",
-        },
         orgs.newRepoSecret('MY_GITHUB_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('OSSRH_PASSWORD') {
-          value: "********",
-        },
-        orgs.newRepoSecret('OSSRH_USERNAME') {
           value: "********",
         },
       ],
@@ -122,6 +117,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-acceptance-testing') {
       allow_merge_commit: true,
@@ -131,6 +130,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-auth') {
       allow_merge_commit: true,
@@ -140,6 +143,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-authz') {
       allow_merge_commit: true,
@@ -151,6 +158,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -174,13 +185,11 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       secrets: [
-        orgs.newRepoSecret('MAVEN_GPG_KEY') {
-          value: "********",
-        },
-        orgs.newRepoSecret('MAVEN_GPG_PASSPHRASE') {
-          value: "********",
-        },
         orgs.newRepoSecret('PASS_DOCKER_PAT') {
           value: "********",
         },
@@ -201,6 +210,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-data-model') {
       allow_merge_commit: true,
@@ -213,6 +226,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
@@ -227,6 +244,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -251,6 +272,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-docker-mailserver') {
       allow_merge_commit: true,
@@ -260,6 +285,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
@@ -269,6 +298,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -293,6 +326,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-dupe-checker') {
       allow_merge_commit: true,
@@ -306,6 +343,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-ember-adapter') {
       allow_merge_commit: true,
@@ -316,6 +357,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -340,6 +385,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://issues.library.jhu.edu/rest/bitbucket/1.0/repository/137/sync') {
           events+: [
@@ -358,6 +407,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://issues.library.jhu.edu/rest/bitbucket/1.0/repository/127/sync') {
           events+: [
@@ -391,6 +444,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
@@ -404,6 +461,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -428,6 +489,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -450,6 +515,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-java-client') {
       allow_merge_commit: true,
@@ -460,6 +529,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -484,6 +557,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-messaging-support') {
       allow_merge_commit: true,
@@ -494,6 +571,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -520,6 +601,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -552,6 +637,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -575,6 +664,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -599,6 +692,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -625,6 +722,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
@@ -637,20 +738,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
-      secrets: [
-        orgs.newRepoSecret('MAVEN_GPG_KEY') {
-          value: "********",
-        },
-        orgs.newRepoSecret('MAVEN_GPG_PASSPHRASE') {
-          value: "********",
-        },
-        orgs.newRepoSecret('OSSRH_PASSWORD') {
-          value: "********",
-        },
-        orgs.newRepoSecret('OSSRH_USERNAME') {
-          value: "********",
-        },
-      ],
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-test') {
       allow_merge_commit: true,
@@ -661,6 +752,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('pass-ui') {
       allow_merge_commit: true,
@@ -672,6 +767,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
@@ -697,6 +796,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('playground') {
       allow_merge_commit: true,
@@ -707,6 +810,10 @@ orgs.newOrg('eclipse-pass') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
+      workflows+: {
+        actions_can_approve_pull_request_reviews: false,
+        default_workflow_permissions: "write",
+      },
       secrets: [
         orgs.newRepoSecret('DIGITALOCEAN_ACCESS_TOKEN') {
           value: "********",
