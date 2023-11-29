@@ -108,6 +108,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('modeshape') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "ModeShape is a distributed, hierarchical, transactional, and consistent data store with support for queries, full-text search, events, versioning, references, and flexible and dynamic schemas. It is very fast, highly available, extremely scalable, and it is 100% open source and written in Java.",
@@ -151,6 +152,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-authz') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Authorization helpers and user service",
@@ -204,6 +206,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-data-migration') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "initial",
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
@@ -218,6 +221,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-data-model') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "The PASS data model",
       gh_pages_build_type: "legacy",
@@ -237,6 +241,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-deposit-services') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Deposit Services are responsible for the transfer of custodial content and metadata from end users to repositories.",
@@ -280,6 +285,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-docker-mailserver') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Provides SMTP and IMAP services for ITs",
       secret_scanning: "disabled",
@@ -293,6 +299,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Service for accepting a DOI and returning a Journal ID and Crossref metadata for the DOI",
       secret_scanning: "disabled",
@@ -320,6 +327,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-download-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "PASS manuscript download service",
       homepage: "",
@@ -334,6 +342,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-dupe-checker') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "Walks a Fedora repository of PASS resources, identifying duplicates and storing output in an SQLite database",
@@ -351,6 +360,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-ember-adapter') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Adapter that enables an ember application to interact with a Fedora repository",
@@ -379,6 +389,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-fcrepo-jms') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "JMS Addons for the Fedora Repository",
@@ -400,6 +411,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-fcrepo-jsonld') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
@@ -434,6 +446,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-fcrepo-module-auth-rbacl') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "Role Based Authorization Delegate Module for the Fedora 4 Repository",
@@ -455,6 +468,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-grant-loader') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "This repo contains code that, when executed, will query institutional grant database for desired data and load it into local persistent storage",
@@ -483,6 +497,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-indexer') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Contains code which keeps an Elasticsearch index up to date with resources in a Fedora repository.",
       homepage: "",
@@ -511,6 +526,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-indexer-checker') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -523,6 +539,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-java-client') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Java client for managing interactions with the PASS data in Fedora",
@@ -551,6 +568,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-journal-loader') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "PASS Journal Loader",
@@ -565,6 +583,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-messaging-support') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Constants and utilities shared between deposit-services and notification-services.",
@@ -593,6 +612,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-metadata-schemas') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "repository for metadata schemas used by PASS ",
       gh_pages_build_type: "legacy",
@@ -631,6 +651,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-nihms-loader') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Service to retrieve Submission data from NIHMS, and update it in PASS",
@@ -659,6 +680,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-notification-services') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "Compose and dispatch notifications to users based on PASS events",
       secret_scanning: "disabled",
@@ -686,6 +708,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-package-providers') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Package Providers maintained by Johns Hopkins",
@@ -714,6 +737,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-policy-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       description: "PASS policy service",
       gh_pages_build_type: "legacy",
@@ -746,6 +770,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-test') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
       description: "Test repository",
@@ -789,6 +814,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-ui-public') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Static resources for the PASS UI to be deployed separately from pass-ember",
