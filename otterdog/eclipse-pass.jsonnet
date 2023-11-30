@@ -183,7 +183,7 @@ orgs.newOrg('eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
+      dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -403,7 +403,11 @@ orgs.newOrg('eclipse-pass') {
       },
       webhooks: [
         orgs.newRepoWebhook('https://issues.library.jhu.edu/rest/bitbucket/1.0/repository/137/sync') {
+          content_type: "json",
           events+: [
+            "issue_comment",
+            "pull_request",
+            "pull_request_review_comment",
             "push"
           ],
         },
@@ -426,7 +430,11 @@ orgs.newOrg('eclipse-pass') {
       },
       webhooks: [
         orgs.newRepoWebhook('https://issues.library.jhu.edu/rest/bitbucket/1.0/repository/127/sync') {
+          content_type: "json",
           events+: [
+            "issue_comment",
+            "pull_request",
+            "pull_request_review_comment",
             "push"
           ],
         },
@@ -759,7 +767,7 @@ orgs.newOrg('eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
+      dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
