@@ -17,6 +17,12 @@ orgs.newOrg('eclipse-pass') {
     },
   },
   secrets+: [
+    orgs.newOrgSecret('HELLO_WORLD_QUEST') {
+      value: "pass:bots/technology.pass/helloworld/quest",
+    },
+    orgs.newOrgSecret('HELLO_WORLD_COLOR') {
+      value: "pass:bots/technology.pass/helloworld/color",
+    },
     orgs.newOrgSecret('GH_PAT') {
       value: "********",
     },
