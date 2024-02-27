@@ -91,6 +91,9 @@ orgs.newOrg('eclipse-pass') {
         orgs.newRepoSecret('EF_TEST_SECRET') {
           value: "********",
         },
+        orgs.newRepoSecret('JAVA_RELEASE_PAT') {
+          value: "********",
+        },
         orgs.newRepoSecret('MY_GITHUB_TOKEN') {
           value: "********",
         },
