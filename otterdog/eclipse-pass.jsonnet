@@ -299,6 +299,8 @@ orgs.newOrg('eclipse-pass') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('pass-documentation') {
+    },
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
