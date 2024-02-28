@@ -300,6 +300,15 @@ orgs.newOrg('eclipse-pass') {
       },
     },
     orgs.newRepo('pass-documentation') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      description: "PASS Documentation",
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      web_commit_signoff_required: false,
     },
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
