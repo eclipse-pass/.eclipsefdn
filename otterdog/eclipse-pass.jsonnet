@@ -44,8 +44,6 @@ orgs.newOrg('eclipse-pass') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -68,8 +66,6 @@ orgs.newOrg('eclipse-pass') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -130,8 +126,6 @@ orgs.newOrg('eclipse-pass') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -143,8 +137,6 @@ orgs.newOrg('eclipse-pass') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -187,8 +179,6 @@ orgs.newOrg('eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -277,8 +267,6 @@ orgs.newOrg('eclipse-pass') {
       delete_branch_on_merge: false,
       description: "Developer-focused PASS runtime, which provides PASS and all of its dependent services using docker-compose.  Provides Docker images used for production deployment of PASS.",
       homepage: "",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -306,8 +294,6 @@ orgs.newOrg('eclipse-pass') {
       description: "PASS Documentation",
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('pass-doi-service') {
@@ -782,8 +768,6 @@ orgs.newOrg('eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -812,8 +796,6 @@ orgs.newOrg('eclipse-pass') {
       dependabot_security_updates_enabled: true,
       description: "UI code base for PASS",
       homepage: "",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
@@ -856,8 +838,6 @@ orgs.newOrg('eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
       description: "Test repository",
-      secret_scanning: "enabled",
-      secret_scanning_push_protection: "enabled",
       web_commit_signoff_required: false,
       workflows+: {
         actions_can_approve_pull_request_reviews: false,
