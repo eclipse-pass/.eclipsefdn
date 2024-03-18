@@ -2,4 +2,4 @@
 *             @eclipse-pass/eclipsefdn-releng
 
 # Otterdog related configurations are also owned by the security team.
-/otterdog/**  @eclipse-pass/eclipsefdn-security @eclipse-pass/eclipsefdn-releng
+/otterdog/**  @eclipse-pass/eclipsefdn-security
