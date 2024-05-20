@@ -134,6 +134,7 @@ orgs.newOrg('eclipse-pass') {
     orgs.newRepo('pass-auth') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
       web_commit_signoff_required: false,
