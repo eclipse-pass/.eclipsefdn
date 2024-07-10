@@ -13,10 +13,10 @@ orgs.newOrg('eclipse-pass') {
   },
   secrets+: [
     orgs.newOrgSecret('GH_PAT') {
-      value: "********",
+      value: "pass:bots/technology.pass/github.com/api-token",
     },
     orgs.newOrgSecret('GH_USER') {
-      value: "********",
+      value: "pass:bots/technology.pass/github.com/username",
     },
     orgs.newOrgSecret('MAVEN_GPG_KEY') {
       value: "pass:bots/technology.pass/gpg/secret-subkeys.asc",
@@ -25,10 +25,10 @@ orgs.newOrg('eclipse-pass') {
       value: "pass:bots/technology.pass/gpg/passphrase",
     },
     orgs.newOrgSecret('OSSRH_PASSWORD') {
-      value: "pass:bots/technology.pass/oss.sonatype.org/password",
+      value: "pass:bots/technology.pass/oss.sonatype.org/gh-token-password",
     },
     orgs.newOrgSecret('OSSRH_USERNAME') {
-      value: "pass:bots/technology.pass/oss.sonatype.org/username",
+      value: "pass:bots/technology.pass/oss.sonatype.org/gh-token-username",
     },
   ],
   _repositories+:: [
