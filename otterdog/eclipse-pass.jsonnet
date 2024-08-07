@@ -281,6 +281,15 @@ orgs.newOrg('eclipse-pass') {
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
     },
+    orgs.newRepo('pass-admin-ui') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: true,
+      dependabot_alerts_enabled: true,
+      dependabot_security_updates_enabled: true,
+      description: "Administrative UI code base for PASS",
+      web_commit_signoff_required: false,
+    },
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
       allow_update_branch: false,
