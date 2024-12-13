@@ -5,7 +5,7 @@ orgs.newOrg('eclipse-pass') {
     description: "",
     name: "Eclipse Pass",
     packages_containers_internal: false,
-     security_managers: [
+    security_managers: [
         "eclipsefdn-security",
         "technology-pass-security"
     ],
