@@ -5,6 +5,10 @@ orgs.newOrg('eclipse-pass') {
     description: "",
     name: "Eclipse Pass",
     packages_containers_internal: false,
+     security_managers: [
+        "eclipsefdn-security",
+        "technology-pass-security"
+    ],
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
