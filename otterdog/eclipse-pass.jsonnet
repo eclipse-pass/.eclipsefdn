@@ -1,6 +1,6 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
-orgs.newOrg('eclipse-pass') {
+orgs.newOrg('technology.pass', 'eclipse-pass') {
   settings+: {
     description: "",
     name: "Eclipse Pass",
