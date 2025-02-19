@@ -89,6 +89,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         orgs.newRepoSecret('MY_GITHUB_TOKEN') {
           value: "********",
         },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-main",
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
@@ -114,6 +117,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-modeshape",
+        },
+      ],
     },
     orgs.newRepo('pass-acceptance-testing') {
       allow_merge_commit: true,
@@ -125,6 +133,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-acceptance-testing",
+        },
+      ],
     },
     orgs.newRepo('pass-auth') {
       allow_merge_commit: true,
@@ -137,6 +150,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-auth",
+        },
+      ],
     },
     orgs.newRepo('pass-authz') {
       allow_merge_commit: true,
@@ -165,6 +183,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-authz",
+        },
+      ],
     },
     orgs.newRepo('pass-core') {
       allow_merge_commit: true,
@@ -187,6 +210,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         orgs.newRepoSecret('PASS_DOCKER_USER') {
           value: "********",
         },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-core",
+        },
       ],
     },
     orgs.newRepo('pass-data-migration') {
@@ -201,6 +227,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-data-migration",
+        },
+      ],
     },
     orgs.newRepo('pass-data-model') {
       allow_merge_commit: true,
@@ -218,6 +249,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       },
       environments: [
         orgs.newEnvironment('github-pages'),
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-data-model",
+        },
       ],
     },
     orgs.newRepo('pass-deposit-services') {
@@ -247,6 +283,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-deposit-services",
+        },
+      ],
     },
     orgs.newRepo('pass-docker') {
       allow_merge_commit: true,
@@ -259,6 +300,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-docker",
+        },
+      ],
     },
     orgs.newRepo('pass-docker-mailserver') {
       allow_merge_commit: true,
@@ -271,6 +317,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-docker-mailserver",
+        },
+      ],
     },
     orgs.newRepo('pass-documentation') {
       allow_merge_commit: true,
@@ -280,6 +331,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-documentation",
+        },
+      ],
     },
     orgs.newRepo('pass-admin-ui') {
       allow_merge_commit: true,
@@ -289,6 +345,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_security_updates_enabled: true,
       description: "Administrative UI code base for PASS",
       web_commit_signoff_required: false,
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-admin-ui",
+        },
+      ],
     },
     orgs.newRepo('pass-doi-service') {
       allow_merge_commit: true,
@@ -315,6 +376,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-doi-service",
+        },
+      ],
     },
     orgs.newRepo('pass-download-service') {
       allow_merge_commit: true,
@@ -328,6 +394,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-download-service",
+        },
+      ],
     },
     orgs.newRepo('pass-dupe-checker') {
       allow_merge_commit: true,
@@ -344,6 +415,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-dupe-checker",
+        },
+      ],
     },
     orgs.newRepo('pass-ember-adapter') {
       allow_merge_commit: true,
@@ -371,6 +447,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-ember-adapter",
+        },
+      ],
     },
     orgs.newRepo('pass-fcrepo-jms') {
       allow_merge_commit: true,
@@ -393,6 +474,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
             "pull_request_review_comment",
             "push"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-fcrepo-jms",
         },
       ],
     },
@@ -432,6 +518,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-fcrepo-jsonld",
+        },
+      ],
     },
     orgs.newRepo('pass-fcrepo-module-auth-rbacl') {
       allow_merge_commit: true,
@@ -451,6 +542,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       },
       environments: [
         orgs.newEnvironment('github-pages'),
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-fcrepo-module-auth-rbacl",
+        },
       ],
     },
     orgs.newRepo('pass-grant-loader') {
@@ -477,6 +573,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
             "push",
             "repository"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-grant-loader",
         },
       ],
     },
@@ -506,6 +607,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-indexer",
+        },
+      ],
     },
     orgs.newRepo('pass-indexer-checker') {
       allow_merge_commit: true,
@@ -517,6 +623,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-indexer-checker",
+        },
+      ],
     },
     orgs.newRepo('pass-java-client') {
       allow_merge_commit: true,
@@ -544,6 +655,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-java-client",
+        },
+      ],
     },
     orgs.newRepo('pass-journal-loader') {
       allow_merge_commit: true,
@@ -557,6 +673,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-journal-loader",
+        },
+      ],
     },
     orgs.newRepo('pass-messaging-support') {
       allow_merge_commit: true,
@@ -582,6 +703,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
             "push",
             "repository"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-messaging-support",
         },
       ],
     },
@@ -621,6 +747,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           deployment_branch_policy: "selected",
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-metadata-schemas",
+        },
+      ],
     },
     orgs.newRepo('pass-nihms-loader') {
       allow_merge_commit: true,
@@ -648,6 +779,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-nihms-loader",
+        },
+      ],
     },
     orgs.newRepo('pass-notification-services') {
       allow_merge_commit: true,
@@ -672,6 +808,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
             "push",
             "repository"
           ],
+        },
+      ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-notification-services",
         },
       ],
     },
@@ -701,6 +842,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-package-providers",
+        },
+      ],
     },
     orgs.newRepo('pass-policy-service') {
       allow_merge_commit: true,
@@ -719,6 +865,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       environments: [
         orgs.newEnvironment('github-pages'),
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-policy-service",
+        },
+      ],
     },
     orgs.newRepo('pass-support') {
       allow_merge_commit: true,
@@ -731,6 +882,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-support",
+        },
+      ],
     },
     orgs.newRepo('pass-test') {
       allow_merge_commit: true,
@@ -744,6 +900,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-test",
+        },
+      ],
     },
     orgs.newRepo('pass-ui') {
       allow_merge_commit: true,
@@ -771,6 +932,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
           ],
         },
       ],
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-ui",
+        },
+      ],
     },
     orgs.newRepo('pass-ui-public') {
       allow_merge_commit: true,
@@ -785,6 +951,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+      secrets: [
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-pass-ui-public",
+        },
+      ],
     },
     orgs.newRepo('playground') {
       allow_merge_commit: true,
@@ -812,6 +983,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         },
         orgs.newRepoSecret('TEST_SECRET') {
           value: "********",
+        },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-playground",
         },
       ],
       environments: [
