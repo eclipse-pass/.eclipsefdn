@@ -89,6 +89,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         orgs.newRepoSecret('MY_GITHUB_TOKEN') {
           value: "********",
         },
+        orgs.newRepoSecret('SONAR_TOKEN') {
+          value: "pass:bots/technology.pass/sonarcloud.io/token-main",
+        },
       ],
       environments: [
         orgs.newEnvironment('github-pages') {
