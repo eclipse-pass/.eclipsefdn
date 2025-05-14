@@ -25,13 +25,15 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       value: "pass:bots/technology.pass/gpg/passphrase",
     },
     orgs.newOrgSecret('OSSRH_PASSWORD') {
-      value: "pass:bots/technology.pass/oss.sonatype.org/gh-token-password",
+      value: "pass:bots/technology.pass/central.sonatype.org/password",
     },
     orgs.newOrgSecret('OSSRH_USERNAME') {
-      value: "pass:bots/technology.pass/oss.sonatype.org/gh-token-username",
+      value: "pass:bots/technology.pass/central.sonatype.org/username",
     },
   ],
   _repositories+:: [
+    orgs.newRepo('.github') {
+    },
     orgs.newRepo('eclipse-pass.github.io') {
       allow_merge_commit: true,
       allow_update_branch: false,
@@ -42,7 +44,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       environments: [
@@ -64,7 +65,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_source_path: "/",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       secrets: [
@@ -112,9 +112,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       has_issues: false,
       has_wiki: false,
       homepage: "http://www.modeshape.org",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -125,19 +126,24 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_alerts_enabled: false,
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('pass-admin-ui') {
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Administrative UI code base for PASS",
+      web_commit_signoff_required: false,
     },
     orgs.newRepo('pass-auth') {
       allow_merge_commit: true,
       allow_update_branch: false,
       archived: true,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -149,9 +155,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_security_updates_enabled: true,
       description: "Authorization helpers and user service",
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -173,11 +180,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       secrets: [
@@ -201,10 +206,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       archived: true,
       default_branch: "initial",
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -217,9 +222,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       environments: [
@@ -234,9 +240,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_security_updates_enabled: true,
       description: "Deposit Services are responsible for the transfer of custodial content and metadata from end users to repositories.",
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -262,7 +269,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       homepage: "",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -272,9 +278,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       archived: true,
       delete_branch_on_merge: false,
       description: "Provides SMTP and IMAP services for ITs",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -282,19 +289,8 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "PASS Documentation",
-      dependabot_alerts_enabled: true,
-      dependabot_security_updates_enabled: true,
-      web_commit_signoff_required: false,
-
-    },
-    orgs.newRepo('pass-admin-ui') {
-      allow_merge_commit: true,
-      allow_update_branch: false,
-      delete_branch_on_merge: true,
-      dependabot_alerts_enabled: true,
-      dependabot_security_updates_enabled: true,
-      description: "Administrative UI code base for PASS",
       web_commit_signoff_required: false,
     },
     orgs.newRepo('pass-doi-service') {
@@ -303,9 +299,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       archived: true,
       delete_branch_on_merge: false,
       description: "Service for accepting a DOI and returning a Journal ID and Crossref metadata for the DOI",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -330,9 +327,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       description: "PASS manuscript download service",
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -346,9 +344,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       has_issues: false,
       has_wiki: false,
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -359,9 +358,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Adapter that enables an ember application to interact with a Fedora repository",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -386,9 +386,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       default_branch: "master",
       delete_branch_on_merge: false,
       description: "JMS Addons for the Fedora Repository",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -411,9 +412,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Addons for manipulating repository JSON-LD behaviour",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -451,9 +453,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_source_branch: "gh-pages",
       gh_pages_source_path: "/",
       has_issues: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       environments: [
@@ -467,9 +470,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "This repo contains code that, when executed, will query institutional grant database for desired data and load it into local persistent storage",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -494,9 +498,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       description: "Contains code which keeps an Elasticsearch index up to date with resources in a Fedora repository.",
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -519,9 +524,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_update_branch: false,
       archived: true,
       delete_branch_on_merge: false,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -532,9 +538,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Java client for managing interactions with the PASS data in Fedora",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -559,9 +566,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "PASS Journal Loader",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -572,9 +580,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Constants and utilities shared between deposit-services and notification-services.",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -601,9 +610,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -636,9 +646,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Service to retrieve Submission data from NIHMS, and update it in PASS",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -662,9 +673,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       archived: true,
       delete_branch_on_merge: false,
       description: "Compose and dispatch notifications to users based on PASS events",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -689,9 +701,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Package Providers maintained by Johns Hopkins",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -718,9 +731,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
       gh_pages_source_path: "/",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       environments: [
@@ -731,11 +745,9 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: true,
       dependabot_security_updates_enabled: true,
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       secrets: [
@@ -749,11 +761,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_update_branch: false,
       archived: true,
       delete_branch_on_merge: false,
-      dependabot_alerts_enabled: false,
       description: "Test repository",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -766,7 +778,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       homepage: "",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       webhooks: [
@@ -792,9 +803,10 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       dependabot_security_updates_enabled: true,
       description: "Static resources for the PASS UI to be deployed separately from pass-ember",
       homepage: "",
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
     },
@@ -806,7 +818,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       description: "Test repository",
       web_commit_signoff_required: false,
       workflows+: {
-        actions_can_approve_pull_request_reviews: false,
         default_workflow_permissions: "write",
       },
       secrets: [
@@ -830,10 +841,5 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         orgs.newEnvironment('testing'),
       ],
     },
-  ],
-} + {
-  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
-  _repositories+:: [
-    orgs.newRepo('.github')
   ],
 }
