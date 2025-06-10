@@ -24,11 +24,11 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
     orgs.newOrgSecret('MAVEN_GPG_PASSPHRASE') {
       value: "pass:bots/technology.pass/gpg/passphrase",
     },
-    orgs.newOrgSecret('OSSRH_PASSWORD') {
-      value: "pass:bots/technology.pass/central.sonatype.org/password",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/technology.pass/central.sonatype.org/token-password",
     },
-    orgs.newOrgSecret('OSSRH_USERNAME') {
-      value: "pass:bots/technology.pass/central.sonatype.org/username",
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/technology.pass/central.sonatype.org/token-username",
     },
   ],
   _repositories+:: [
