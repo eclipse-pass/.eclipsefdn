@@ -288,6 +288,7 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
     orgs.newRepo('pass-documentation') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      default_branch: "development",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "PASS Documentation",
