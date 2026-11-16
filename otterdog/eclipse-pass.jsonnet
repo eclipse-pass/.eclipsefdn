@@ -12,12 +12,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
     },
   },
   secrets+: [
-    orgs.newOrgSecret('GH_PAT') {
-      value: "pass:bots/technology.pass/github.com/api-token",
-    },
-    orgs.newOrgSecret('GH_USER') {
-      value: "pass:bots/technology.pass/github.com/username",
-    },
     orgs.newOrgSecret('MAVEN_GPG_KEY') {
       value: "pass:bots/technology.pass/gpg/secret-subkeys.asc",
     },
@@ -59,6 +53,7 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Catch all repository against which issues of general, cross cutting topics are logged.",
       gh_pages_build_type: "legacy",
       gh_pages_source_branch: "main",
@@ -68,27 +63,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         default_workflow_permissions: "write",
       },
       secrets: [
-        orgs.newRepoSecret('AWS_ACCESS_KEY_ID') {
-          value: "********",
-        },
-        orgs.newRepoSecret('AWS_REGION') {
-          value: "********",
-        },
-        orgs.newRepoSecret('AWS_SECRET_ACCESS_KEY') {
-          value: "********",
-        },
-        orgs.newRepoSecret('AWS_TOPIC_ARN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('EF_TEST_SECRET') {
-          value: "********",
-        },
-        orgs.newRepoSecret('JAVA_RELEASE_PAT') {
-          value: "********",
-        },
-        orgs.newRepoSecret('MY_GITHUB_TOKEN') {
-          value: "********",
-        },
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/technology.pass/sonarcloud.io/token-main",
         },
@@ -186,15 +160,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
         default_workflow_permissions: "write",
       },
       secrets: [
-        orgs.newRepoSecret('PASS_DOCKER_PAT') {
-          value: "********",
-        },
-        orgs.newRepoSecret('PASS_DOCKER_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('PASS_DOCKER_USER') {
-          value: "********",
-        },
         orgs.newRepoSecret('SONAR_TOKEN') {
           value: "pass:bots/technology.pass/sonarcloud.io/token-pass-core",
         },
@@ -265,6 +230,7 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
       description: "Developer-focused PASS runtime, which provides PASS and all of its dependent services using docker-compose.  Provides Docker images used for production deployment of PASS.",
       homepage: "",
       web_commit_signoff_required: false,
@@ -814,6 +780,7 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
     orgs.newRepo('playground') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: false,
       dependabot_alerts_enabled: false,
       description: "Test repository",
@@ -821,23 +788,6 @@ orgs.newOrg('technology.pass', 'eclipse-pass') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      secrets: [
-        orgs.newRepoSecret('DIGITALOCEAN_ACCESS_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('GHCR_TOKEN') {
-          value: "********",
-        },
-        orgs.newRepoSecret('KUBE_CONFIG') {
-          value: "********",
-        },
-        orgs.newRepoSecret('PASS_DOCKER_PAT') {
-          value: "********",
-        },
-        orgs.newRepoSecret('TEST_SECRET') {
-          value: "********",
-        },
-      ],
       environments: [
         orgs.newEnvironment('testing'),
       ],
